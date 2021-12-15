@@ -75,46 +75,6 @@ export const initDetails = [
             position: 'Regional Identity Supervisor',
         },
     },
-    {
-        id: 7,
-        name: 'Dorthy McClure Sr.',
-        avatar: 'https://i.pravatar.cc/300',
-        details: {
-            city: 'Sipesfort',
-            company: 'Hilll LLC',
-            position: 'Regional Identity Supervisor',
-        },
-    },
-    {
-        id: 8,
-        name: 'Dorthy McClure Sr.',
-        avatar: 'https://i.pravatar.cc/300',
-        details: {
-            city: 'Sipesfort',
-            company: 'Hilll LLC',
-            position: 'Regional Identity Supervisor',
-        },
-    },
-    {
-        id: 9,
-        name: 'Dorthy McClure Sr.',
-        avatar: 'https://i.pravatar.cc/300',
-        details: {
-            city: 'Sipesfort',
-            company: 'Hilll LLC',
-            position: 'Regional Identity Supervisor',
-        },
-    },
-    {
-        id: 10,
-        name: 'Dorthy McClure Sr.',
-        avatar: 'https://i.pravatar.cc/300',
-        details: {
-            city: 'Sipesfort',
-            company: 'Hilll LLC',
-            position: 'Regional Identity Supervisor',
-        },
-    },
 ];
 
 export const initUsers = [
@@ -133,29 +93,5 @@ export const initUsers = [
     {
         id: 4,
         name: 'Kelvin Harvey',
-    },
-    {
-        id: 5,
-        name: 'Mohamed Kertzmann',
-    },
-    {
-        id: 6,
-        name: 'Vladimir Tromp',
-    },
-    {
-        id: 7,
-        name: 'Laron Trantow',
-    },
-    {
-        id: 8,
-        name: 'Adolph Rohan',
-    },
-    {
-        id: 9,
-        name: 'Dr. Grady Abernathy',
-    },
-    {
-        id: 10,
-        name: 'Robbie Mayer',
     },
 ];

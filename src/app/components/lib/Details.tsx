@@ -5,11 +5,10 @@ import { Flex } from '../primitives/Flex';
 import Heading from '../primitives/Heading';
 import Image from '../primitives/Image';
 import { BoxProps } from '../primitives/rebassTypes';
-import { Box } from '../primitives/Box';
 import { DetailsType } from '../../data/initContent';
 import { ListItem } from './ListItem';
 
-type DetailProps = BoxProps & { contentData: DetailsType };
+type DetailProps = BoxProps & { contentData: DetailsType | null };
 
 export function Details({ contentData }: DetailProps) {
     if (!contentData) return null;

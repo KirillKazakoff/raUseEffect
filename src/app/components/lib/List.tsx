@@ -1,18 +1,15 @@
-import React, { Dispatch, SetStateAction } from 'react';
-import { detailsList } from '../../logic/ContentList';
-import { DetailsType } from '../../data/initContent';
+import React from 'react';
 import Ul from '../primitives/Ul';
 import { FlexProps } from '../primitives/Flex';
 
-type ListProps = FlexProps & { detailsHandler: Dispatch<SetStateAction<DetailsType>> };
+type ListProps = FlexProps & { detailsHandler: (id: string) => void };
 
 export function List({ children, detailsHandler }: ListProps) {
     const onUlClick = (e: React.SyntheticEvent) => {
         const target = e.target as HTMLElement;
 
         if (target.classList.contains('user')) {
-            const newDetails = detailsList.getItem(target.id);
-            detailsHandler(newDetails);
+            detailsHandler(target.id);
         }
     };
 
