@@ -33,7 +33,9 @@ export default function App() {
         </ListItem>
     ));
 
-    if (!users) return <Text>Loading</Text>;
+    if (users.length === 0) {
+        return <Text>Loading</Text>;
+    }
     return (
         <Box variant='layout'>
             <Flex gap='40px'>
