@@ -1,4 +1,3 @@
-/* eslint-disable object-curly-spacing */
 import '../css/defaultStyle.css';
 import React, { useEffect, useState } from 'react';
 import { Details } from './components/lib/Details';
@@ -7,26 +6,20 @@ import { Box } from './components/primitives/Box';
 import { Flex } from './components/primitives/Flex';
 import { List } from './components/lib/List';
 import { Text } from './components/primitives/Text';
-import { DetailsType, UserType } from './data/initContent';
+import { UserType } from './data/types';
 
 const usersUrl = 'https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/hooks-context/use-effect/data/users.json';
-const dataBaseUrl = 'https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/hooks-context/use-effect/data';
 
 export default function App() {
     const [users, setUsers] = useState<UserType[]>([]);
-    const [currentDetails, setCurrentDet] = useState<DetailsType>();
+
+    const [currentUser, setCurrentUser] = useState<string>();
 
     useEffect(() => {
         fetch(usersUrl)
             .then((res) => res.json())
             .then((res) => setUsers(res));
     }, []);
-
-    const handler = async (id: string) => {
-        const response = await fetch(`${dataBaseUrl}/${id}.json`);
-        const details = await response.json();
-        setCurrentDet(details);
-    };
 
     const usersHtml = users.map((item) => (
         <ListItem
@@ -44,8 +37,8 @@ export default function App() {
     return (
         <Box variant='layout'>
             <Flex gap='40px'>
-                <List detailsHandler={handler}>{usersHtml}</List>
-                <Details contentData={currentDetails || null} />
+                <List setCurrentUser={setCurrentUser}>{usersHtml}</List>
+                {currentUser ? <Details id={currentUser} /> : null}
             </Flex>
         </Box>
     );

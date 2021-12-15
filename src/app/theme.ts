@@ -1,18 +1,8 @@
-/* eslint-disable no-shadow */
 const colors = {
     primary: 'teal',
     secondary: 'tan',
     hint: 'grey',
     cancel: 'red',
-};
-
-const variants = {
-    box: {
-        rounded: {
-            border: 'primary',
-            borderRadius: '100px',
-        },
-    },
 };
 
 export const theme = {
