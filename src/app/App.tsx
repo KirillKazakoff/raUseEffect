@@ -14,11 +14,18 @@ export default function App() {
     const [users, setUsers] = useState<UserType[]>([]);
 
     const [currentUser, setCurrentUser] = useState<string>();
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
+        setLoading(true);
         fetch(usersUrl)
             .then((res) => res.json())
-            .then((res) => setUsers(res));
+            .then((res) => {
+                setUsers(res);
+                setLoading(false);
+            })
+            .catch((err) => setError(err.message));
     }, []);
 
     const usersHtml = users.map((item) => (
@@ -33,9 +40,9 @@ export default function App() {
         </ListItem>
     ));
 
-    if (users.length === 0) {
-        return <Text>Loading</Text>;
-    }
+    if (error) return <Text>{error}</Text>;
+    if (loading) return <Text>Loading...</Text>;
+
     return (
         <Box variant='layout'>
             <Flex gap='40px'>
